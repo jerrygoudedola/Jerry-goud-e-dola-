@@ -145,14 +145,13 @@ const translations = {
 const languageSelect = document.getElementById("languageSelect");
 
 if (languageSelect) {
-  languageSelect.addEventListener("change", function () {
+  languageSelect.addEventListener("change")), function () {
     const lang = translations[this.value];
     document.querySelector('a[href="#konvetise"]').textContent = lang.converter;
     document.querySelector('a[href="#demo"]').textContent = lang.demo;
     document.querySelector('a[href="#aprann"]').textContent = lang.learn;
     document.querySelector(".pill").textContent = lang.demoLabel;
   });
- 
 }
 </script>
 </body>
