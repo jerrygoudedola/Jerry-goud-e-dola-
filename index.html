@@ -143,7 +143,6 @@ const translations = {
 };
 
 const languageSelect = document.getElementById("languageSelect");
-
 if (languageSelect) {
     const lang = translations[this.value];
      languageSelect.addEventListener("change", function () {
@@ -155,6 +154,7 @@ if (languageSelect) {
  
    languageSelect.dispatchEvent(new Event("change"));
 }
+
 </script>
 </body>
 </html>
