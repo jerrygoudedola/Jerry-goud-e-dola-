@@ -115,6 +115,44 @@ $('addDemo').addEventListener('click',()=>{const n=Number($('demoAmount').value)
 $('spendDemo').addEventListener('click',()=>{const n=Number($('demoAmount').value);if(!Number.isFinite(n)||n<=0){toast('Antre yon montan Demo ki pi gran pase zewo.');return}if(n>balance){toast('Balans Demo a pa ase pou egzèsis sa a.');return}balance-=n;updateBalance();addActivity('Depans Demo',-n);toast('Egzèsis depans la fèt nan Demo sèlman.')});
 $('resetDemo').addEventListener('click',()=>{balance=10000;$('activityList').innerHTML='<div class="activity-row"><span>Balans Demo inisyal</span><span>+10,000.00 HTG</span></div>';updateBalance();calculate();toast('Kont Demo a rekòmanse.')});
 calculate();updateBalance();
+const translations = {
+  ht: {
+    converter: "Konvètisè",
+    demo: "Demo",
+    learn: "Aprann",
+    demoLabel: "100% DEMO"
+  },
+  fr: {
+    converter: "Convertisseur",
+    demo: "Simulation",
+    learn: "Apprendre",
+    demoLabel: "100% DÉMO"
+  },
+  en: {
+    converter: "Converter",
+    demo: "Demo",
+    learn: "Learn",
+    demoLabel: "100% DEMO"
+  },
+  es: {
+    converter: "Convertidor",
+    demo: "Simulación",
+    learn: "Aprender",
+    demoLabel: "100% DEMO"
+  }
+};
+
+const languageSelect = document.getElementById("languageSelect");
+
+if (languageSelect) {
+  languageSelect.addEventListener("change", function () {
+    const lang = translations[this.value];
+    document.querySelector('a[href="#konvetise"]').textContent = lang.converter;
+    document.querySelector('a[href="#demo"]').textContent = lang.demo;
+    document.querySelector('a[href="#aprann"]').textContent = lang.learn;
+    document.querySelector(".pill").textContent = lang.demoLabel;
+  });
+}
 </script>
 </body>
 </html>
