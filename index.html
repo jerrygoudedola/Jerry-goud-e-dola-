@@ -152,6 +152,7 @@ if (languageSelect) {
     document.querySelector('a[href="#aprann"]').textContent = lang.learn;
     document.querySelector(".pill").textContent = lang.demoLabel;
   });
+   languageSelect.dispatchEvent(new Event("change"));
 }
 </script>
 </body>
